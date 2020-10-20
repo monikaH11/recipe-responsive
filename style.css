@@ -1,0 +1,141 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html { box-sizing: border-box; }
+*, :after, :before { box-sizing: inherit; }
+
+
+/* -------------------------------------------------- */
+
+/*
+pouzivame mobile first pristup
+tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni (telefony)
+s pribyvajici sirkou pridavame media query pro...
+tablety:
+@media (min-width: 480px) {
+}
+notebook/pc:
+@media (min-width: 860px) {
+}
+*/
+
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.paticka {
+    text-align: center;
+    font-size: 14px;
+    color: silver;
+}
+
+.paticka a {
+    color: silver;
+}
+
+.hlavicka{
+    font-weight: 400;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-shadow: 1px 1px black;
+}
+
+.nazev{
+    display: flex;
+    font-weight: 800;
+    padding: 10px;
+    text-shadow: 1px 1px black;
+}
+
+.recept{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    justify-content: space-between;
+    margin: 1px;
+}
+
+.hlavni{
+    min-height: 200px;
+    background-image: url(images/salat.jpg);
+}
+
+.prvni{
+    min-height: 90px;
+    background-image: url(images/chlebicek.jpg);
+}
+
+.druhy{
+    min-height: 90px;
+    background-image: url(images/tacos.jpg);
+}
+
+.treti{
+    min-height: 90px;
+    background-image: url(images/cizrna.jpg);
+}
+
+.ctvrty{
+    min-height: 90px;
+    background-image: url(images/burger.jpg);
+}
+
+@media(min-width: 640px){
+    .komplet{
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100;
+        flex-wrap: wrap;
+    }
+
+    .hlavni{
+        display: flex;
+        flex-basis: 100%;
+        min-height: 250px;
+    }
+    
+    .web2{
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+
+    .prvni,
+    .druhy,
+    .treti,
+    .ctvrty{
+        flex: 1 1 calc((100% - 8px) / 4);
+        min-height: 150px;
+    }
+}
+
+@media(min-width: 1000px){
+    .komplet{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .hlavni{
+        flex: 1 1 calc((100% - 4px) / 3);
+        min-height: 400px;
+    }
+
+    .web2{
+        flex: 1 1 calc(2*((100% - 4px) / 3));
+        flex-wrap: wrap;
+    }
+    .prvni,
+    .druhy,
+    .treti,
+    .ctvrty{
+         flex: 1 1 calc((100% - 4px) / 2);
+         min-height: 200px;
+     }
+
+}
