@@ -1,1 +1,1 @@
-# course-projects
+# recipe-responsive
